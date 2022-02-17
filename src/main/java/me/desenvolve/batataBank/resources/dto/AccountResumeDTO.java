@@ -2,7 +2,8 @@ package me.desenvolve.batataBank.resources.dto;
 
 import javax.validation.constraints.NotNull;
 
-public class CreateAccountDTO {
+public class AccountResumeDTO {
+    private Integer id;
 
     @NotNull(message = "Necessário informar agencia")
     private Integer agencia;
@@ -13,18 +14,20 @@ public class CreateAccountDTO {
     @NotNull(message = "Necessário informar cpf")
     private String cpf;
 
-    @NotNull
-    private BillingAddressDTO enderecoDeCobranca;
-
-
-    @Deprecated
-    CreateAccountDTO(){}
-
-    public CreateAccountDTO(Integer agencia, Integer conta, String cpf, BillingAddressDTO enderecoDeCobranca) {
+    public AccountResumeDTO(Integer id, @NotNull(message = "Necessário informar agencia") Integer agencia, @NotNull(message = "Necessário informar numero da conta") Integer conta, @NotNull(message = "Necessário informar cpf") String cpf) {
+        this.id = id;
         this.agencia = agencia;
         this.conta = conta;
         this.cpf = cpf;
-        this.enderecoDeCobranca = enderecoDeCobranca;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getAgencia() {
@@ -49,13 +52,5 @@ public class CreateAccountDTO {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public BillingAddressDTO getEnderecoDeCobranca() {
-        return enderecoDeCobranca;
-    }
-
-    public void setEnderecoDeCobranca(BillingAddressDTO enderecoDeCobranca) {
-        this.enderecoDeCobranca = enderecoDeCobranca;
     }
 }

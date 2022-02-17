@@ -1,4 +1,4 @@
-package me.desenvolve.batataBank.resources.dto;
+package me.desenvolve.batataBank.model;
 
 public enum TransactionType {
     DEBITO,

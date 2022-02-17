@@ -1,23 +1,25 @@
 package me.desenvolve.batataBank.resources.dto;
 
+import me.desenvolve.batataBank.model.TransactionType;
+
 public class TransactionDTO {
 
-    private TransactionType tipo;
+    private String tipo;
     private Double valor;
 
     @Deprecated
     public TransactionDTO(){}
 
-    public TransactionDTO(TransactionType tipo, Double valor) {
+    public TransactionDTO(String tipo, Double valor) {
         this.tipo = tipo;
         this.valor = valor;
     }
 
-    public TransactionType getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TransactionType tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
